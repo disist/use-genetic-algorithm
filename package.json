@@ -1,0 +1,18 @@
+{
+  "name": "ga-forecast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "static app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmytro Golysh <disist357@gmail.com> (https://github.com/garage-it)",
+  "license": "ISC",
+  "dependencies": {
+    "genetic-js": "^0.1.14"
+  },
+  "devDependencies": {
+    "node-static": "^0.7.9"
+  }
+}
