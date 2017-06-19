@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    window.INIT_X, window.INIT_Y = 0;
+    window.POS_X, window.POS_Y = 0;
 
     startRect();
 
@@ -13,34 +13,34 @@ function startRect() {
     desc.height = 640;
     desc.width = 960;
 
-    window.INIT_X = 0;
-    window.INIT_Y = desc.height / 2;
+    window.POS_X = 0;
+    window.POS_Y = desc.height / 2;
 
     const INTERVAL_MS = 100;
 
     ctx.beginPath();
-    ctx.moveTo(window.INIT_X, window.INIT_Y);
+    ctx.moveTo(window.POS_X, window.POS_Y);
 
     setInterval(() => {
-        window.INIT_X++;
+        window.POS_X++;
 
-        if (window.INIT_X > (desc.width - 200)) {
-            window.INIT_X -= desc.width - 200;
+        if (window.POS_X > (desc.width - 200)) {
+            window.POS_X -= desc.width - 200;
             ctx.clearRect(0, 0, desc.width, desc.height);
 
             ctx.beginPath();
         }
 
-        window.INIT_Y += _generateY();
+        window.POS_Y += _generateY();
 
-        if (window.INIT_Y >= desc.height) {
-            window.INIT_Y = desc.height;
+        if (window.POS_Y >= desc.height) {
+            window.POS_Y = desc.height;
         } else
-            if (window.INIT_Y <= 0) {
-                window.INIT_Y = 0;
+            if (window.POS_Y <= 0) {
+                window.POS_Y = 0;
             }
 
-        ctx.lineTo(window.INIT_X, window.INIT_Y);
+        ctx.lineTo(window.POS_X, window.POS_Y);
         displayY();
 
         ctx.stroke();
@@ -48,7 +48,7 @@ function startRect() {
 }
 
 function displayY() {
-    document.getElementById('Y').innerHTML = window.INIT_Y;
+    document.getElementById('Y').textContent = window.POS_Y;
 }
 
 function startPredict() {
